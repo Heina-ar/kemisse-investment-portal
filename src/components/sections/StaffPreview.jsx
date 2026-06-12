@@ -15,7 +15,7 @@ const FALLBACK_STAFF = [
 
 export default function StaffPreview() {
   const { t, lang } = useLanguage()
-  const [staff, setStaff] = useState(FALLBACK_STAFF)
+  const [staff, setStaff] = useState([])
 
   useEffect(() => {
     async function fetchStaff() {
@@ -26,7 +26,7 @@ export default function StaffPreview() {
           .eq('status', 'active')
           .order('display_order', { ascending: true })
           .limit(6)
-        if (data?.length) setStaff(data)
+        setStaff(data || [])
       } catch { /* use fallback */ }
     }
     fetchStaff()
