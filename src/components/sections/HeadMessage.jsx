@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Quote, ArrowRight } from 'lucide-react'
+import { Quote, ArrowRight, User } from 'lucide-react'
 import { useLanguage } from '../../contexts/LanguageContext'
 
 const MESSAGE = {
@@ -23,23 +23,9 @@ export default function HeadMessage() {
             <div className="absolute -top-4 -left-4 w-72 h-72 bg-primary-50 rounded-3xl -z-10" />
             <div className="absolute -bottom-4 -right-4 w-48 h-48 bg-accent-50 rounded-3xl -z-10" />
 
-            <div className="relative rounded-2xl overflow-hidden shadow-gov-lg aspect-[4/5] max-w-sm mx-auto lg:mx-0">
-              <img
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&q=80"
-                alt="Office Head"
-                className="w-full h-full object-cover"
-              />
-              {/* Name plate */}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/90 to-transparent p-6">
-                <p className={`text-white font-bold text-lg ${lang === 'am' ? 'font-ethiopic' : ''}`}>
-                  {lang === 'am' ? 'አቶ/ወ/ሮ [ስም]' : lang === 'om' ? 'Obbo/Aaddee [Maqaa]' : 'Mr./Ms. [Name]'}
-                </p>
-                <p className="text-accent text-sm font-medium">
-                  {lang === 'am' ? 'የጽ/ቤቱ ኃላፊ' : lang === 'om' ? 'Hogganaa Biiroo' : 'Office Head'}
-                </p>
-              </div>
-            </div>
-          </div>
+            <div className="relative rounded-2xl overflow-hidden shadow-gov-lg aspect-[4/5] max-w-sm mx-auto lg:mx-0 bg-gray-100 flex items-center justify-center">
+  <User size={80} className="text-gray-400" />
+</div>
 
           {/* Message side */}
           <div>
