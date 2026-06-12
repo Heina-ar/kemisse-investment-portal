@@ -1,0 +1,216 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================
+   BASE STYLES
+======================================== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-gov-text bg-white antialiased;
+  }
+
+  /* Amharic / Ethiopic text */
+  :lang(am), .font-ethiopic {
+    font-family: 'Noto Sans Ethiopic', 'Noto Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold leading-tight;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  img {
+    @apply max-w-full;
+  }
+
+  * {
+    @apply box-border;
+  }
+}
+
+/* ========================================
+   COMPONENT LAYER
+======================================== */
+@layer components {
+
+  /* --- Buttons --- */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-semibold rounded-md
+           hover:bg-primary-600 active:bg-primary-700
+           transition-all duration-200 shadow-gov hover:shadow-gov-lg
+           focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-secondary text-white font-semibold rounded-md
+           hover:bg-secondary-600 active:bg-secondary-700
+           transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-6 py-3 border-2 border-primary text-primary font-semibold rounded-md
+           hover:bg-primary hover:text-white
+           transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-accent text-white font-semibold rounded-md
+           hover:bg-accent-600
+           transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2;
+  }
+
+  .btn-sm {
+    @apply px-4 py-2 text-sm;
+  }
+
+  /* --- Cards --- */
+  .card {
+    @apply bg-white rounded-xl shadow-card hover:shadow-card-hover transition-all duration-300;
+  }
+
+  .card-gov {
+    @apply bg-white rounded-xl border border-gray-100 shadow-gov hover:shadow-gov-lg
+           hover:-translate-y-1 transition-all duration-300;
+  }
+
+  /* --- Section Wrappers --- */
+  .section-wrapper {
+    @apply py-16 px-4;
+  }
+
+  .section-bg {
+    @apply bg-gov-bg;
+  }
+
+  .container-gov {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* --- Section Title --- */
+  .section-title {
+    @apply text-3xl font-bold text-primary mb-2;
+  }
+
+  .section-subtitle {
+    @apply text-gray-500 text-base mb-10;
+  }
+
+  .section-divider {
+    @apply w-16 h-1 bg-accent rounded-full mb-4;
+  }
+
+  /* --- Badge --- */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .badge-primary {
+    @apply badge bg-primary-50 text-primary;
+  }
+
+  .badge-secondary {
+    @apply badge bg-secondary-50 text-secondary-600;
+  }
+
+  .badge-accent {
+    @apply badge bg-accent-50 text-accent-600;
+  }
+
+  /* --- Form Inputs --- */
+  .input-gov {
+    @apply w-full px-4 py-3 border border-gray-200 rounded-lg
+           focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent
+           placeholder:text-gray-400 text-gov-text bg-white
+           transition-all duration-200;
+  }
+
+  .label-gov {
+    @apply block text-sm font-medium text-gov-text mb-1;
+  }
+
+  /* --- Nav Link --- */
+  .nav-link {
+    @apply text-gov-text font-medium px-3 py-2 rounded-md
+           hover:text-primary hover:bg-primary-50
+           transition-all duration-200 text-sm;
+  }
+
+  .nav-link-active {
+    @apply text-primary bg-primary-50 font-semibold;
+  }
+
+  /* --- Stat Card --- */
+  .stat-card {
+    @apply text-center p-6 bg-white rounded-xl shadow-card;
+  }
+}
+
+/* ========================================
+   UTILITY LAYER
+======================================== */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ========================================
+   HERO SLIDER
+======================================== */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-slide.active {
+  opacity: 1;
+}
+
+/* ========================================
+   ANNOUNCEMENT BAR
+======================================== */
+.announcement-bar {
+  background: linear-gradient(90deg, #0F4C81, #2E7D32);
+  animation: marqueeScroll 30s linear infinite;
+}
+
+@keyframes marqueeScroll {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* ========================================
+   LIGHTBOX
+======================================== */
+.lightbox-overlay {
+  backdrop-filter: blur(4px);
+}
+
+/* ========================================
+   PRINT
+======================================== */
+@media print {
+  .no-print { display: none !important; }
+}
