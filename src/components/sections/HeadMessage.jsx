@@ -24,8 +24,9 @@ export default function HeadMessage() {
             <div className="absolute -bottom-4 -right-4 w-48 h-48 bg-accent-50 rounded-3xl -z-10" />
 
             <div className="relative rounded-2xl overflow-hidden shadow-gov-lg aspect-[4/5] max-w-sm mx-auto lg:mx-0 bg-gray-100 flex items-center justify-center">
-  <User size={80} className="text-gray-400" />
-</div>
+              <User size={80} className="text-gray-400" />
+            </div>
+          </div> {/* 👈 ይሄ የ "Image side" መዝጊያ div ተጨምሯል */}
 
           {/* Message side */}
           <div>
