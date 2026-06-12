@@ -16,7 +16,7 @@ const DEPT_DETAILS = {
       en: ['Expand investment promotion','Provide support and advice to investors','Manage investment licenses','Cooperate with international organizations','Prepare investment plans'],
       om: ["Invastimantii babal'isuu","Invastara deeggarsa fi gorsa dhiheessuu","Hayyama invastimantii bulchuu","Dhaabbilee idil-addunyaa wajjin hojjachuu","Karoora invastimantii qopheessuu"],
     },
-    phone: '+251 033 XXX 0001', email: 'investment@kemisseinvestment.gov.et',
+    phone: '+251 935211917', email: 'investment@kemisseinvestment.gov.et',
   },
   'industry-development': {
     icon: Factory,
