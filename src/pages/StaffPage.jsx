@@ -29,7 +29,7 @@ const DEPARTMENTS = [
 
 export default function StaffPage() {
   const { t, lang } = useLanguage()
-  const [staff, setStaff]     = useState(FALLBACK_STAFF)
+  const [staff, setStaff] = useState([])
   const [search, setSearch]   = useState('')
   const [deptFilter, setDeptFilter] = useState('all')
 
@@ -37,7 +37,7 @@ export default function StaffPage() {
     async function load() {
       try {
         const { data } = await supabase.from(TABLES.EMPLOYEES).select('*').eq('status','active').order('display_order')
-        if (data?.length) setStaff(data)
+        setStaff(data || [])
       } catch {}
     }
     load()
